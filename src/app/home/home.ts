@@ -1,12 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router'
+import { ButtonDirective } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ButtonDirective],
   templateUrl: './home.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.css',
 })
+
 export class Home {
   private router = inject(Router);
 
